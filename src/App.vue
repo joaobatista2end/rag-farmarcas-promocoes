@@ -19,6 +19,7 @@ onMounted(() => {
 			footer: '',
 			getStarted: '',
 			inputPlaceholder: 'Digite sua pergunta...',
+			closeButtonTooltip: 'Fechar chat'
 		},
 	},
 	})
