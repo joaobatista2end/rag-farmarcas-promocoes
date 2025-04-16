@@ -5,31 +5,32 @@ import { createChat } from "@n8n/chat";
 
 onMounted(async () => {
   createChat({
-    webhookUrl: "https://n8n.2-end.com/webhook/your-webhook-id/chat",
+    webhookUrl: "https://autocosmos.app.n8n.cloud/webhook/your-webhook-id/chat",
     initialMessages: [
       `
-### 💊 Olá! Seja bem-vindo(a)!
+### 👋 Olá! Seja bem-vindo(a)!
 
-Sou o consultor inteligente de precificação da Farmarcas, pronto para te ajudar com decisões estratégicas no varejo farmacêutico.
-Tenho acesso aos documentos e aprendizados registrados durante a consultoria, e posso analisar dados, responder dúvidas e sugerir melhorias com base em:
+Sou a Cléo, sua assistente virtual da Farmarcas! Estou aqui para te ajudar com todas as informações sobre nossas promoções.
 
-- 📌 Estratégias de preço
-- 📊 Análise de mercado e concorrência
-- 🧠 Comportamento do consumidor
-- 📦 Sortimento, categorias e margem de contribuição
-- 📉 Elasticidade, markup, curva ABC e muito mais!
+Posso te ajudar com as principais dúvidas, como:
 
-Se precisar de alguma recomendação, insight ou análise, é só perguntar.
-Ah! Se eu não tiver informação suficiente, vou te avisar o que está faltando, beleza? 😉
+- 🎯 Quem pode participar da promoção
+- 📍 Regiões participantes
+- 🛍️ Produtos inclusos e exclusos
+- 📅 Período da promoção
+- 💳 Como participar e ser cliente fidelidade
+- 📋 Termos e condições
 
-Qual sua dúvida de hoje? 💬`,
+Fique à vontade para perguntar! Estou aqui para te ajudar a aproveitar nossas promoções da melhor forma! 😊
+
+Como posso te ajudar hoje? 💬`,
       `🔄 Carregando... Aguarde um instante.`,
     ],
     mode: "fullscreen",
     showWelcomeScreen: false,
     i18n: {
       en: {
-        title: "💵 Agente de Precificação",
+        title: "🏷️ Promoções Farmarcas",
         subtitle: "",
         footer: "",
         getStarted: "",
