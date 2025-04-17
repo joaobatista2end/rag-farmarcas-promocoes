@@ -1,9 +1,6 @@
 import { ref, computed } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
-/**
- * Opções de configuração do chat
- */
 export interface UseChatOptions {
   webhookUrl: string
   /** Método HTTP e headers adicionais */

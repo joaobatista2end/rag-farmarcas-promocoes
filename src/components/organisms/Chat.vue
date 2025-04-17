@@ -5,11 +5,14 @@ import ChatMessage from '../molecules/ChatMessage.vue'
 import ChatInput from '../atoms/ChatInput.vue'
 import ChatTypingIndicator from '../atoms/ChatTypingIndicator.vue'
 
+const props = defineProps<{
+  webhookUrl: string,
+  initialMessages: Array<string>
+}>();
+
 const chat = useChat({
-  webhookUrl: 'https://n8n.2-end.com/webhook/your-webhook-id/chat',
-  initialMessages: [
-    '👋 Olá! Seja bem-vindo(a)! Sou a Cléo, sua assistente virtual da Farmarcas! Estou aqui para te ajudar com todas as informações sobre nossas promoções. Como posso te ajudar hoje? 💬'
-  ],
+  webhookUrl: props.webhookUrl,
+  initialMessages: props.initialMessages,
 })
 
 const { messages, welcomeMessage, waitingForResponse, sendMessage } = chat

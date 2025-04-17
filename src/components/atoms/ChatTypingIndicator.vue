@@ -1,6 +1,6 @@
 <template>
   <div class="inline-flex items-center space-x-2 px-4 py-2 text-zinc-400 bg-gradient-to-l form-zinc-800/20 to-zinc-900/40">
-    <span class="text-lg font-mediumtext-white">Cléo está digitando</span>
+    <span class="text-lg font-mediumtext-white">Pensando</span>
     <div class="typing-indicator">
       <span></span>
       <span></span>
