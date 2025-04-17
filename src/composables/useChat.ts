@@ -45,7 +45,8 @@ export function useChat(options: UseChatOptions) {
   )
 
   // Estado reativo
-  const messages = ref([...initial.value])
+  const welcomeMessage = ref(initial.value[0] || null)
+  const messages = ref(initial.value.slice(1))
   const currentSessionId = ref<string | null>(null)
   const waitingForResponse = ref(false)
 
@@ -107,12 +108,13 @@ export function useChat(options: UseChatOptions) {
     }
 
     const data = result.data ?? []
-    messages.value = data.map((h: any, i: number) => ({
+    const mappedMessages = data.map((h: any, i: number) => ({
       id: String(i),
       text: h.kwargs?.content || '',
       sender: h.id?.includes('HumanMessage') ? 'user' : 'bot',
       createdAt: new Date().toISOString(),
     }))
+    messages.value = mappedMessages
     if (messages.value.length) {
       currentSessionId.value = session
     }
@@ -125,7 +127,7 @@ export function useChat(options: UseChatOptions) {
     const newId = uuidv4()
     currentSessionId.value = newId
     localStorage.setItem(key, newId)
-    messages.value = [...initial.value]
+    messages.value = initial.value.slice(1)
   }
 
   // Envia mensagem do usuário e recebe resposta da API
@@ -190,6 +192,7 @@ export function useChat(options: UseChatOptions) {
 
   return {
     initialMessages: initial,
+    welcomeMessage,
     messages,
     currentSessionId,
     waitingForResponse,
