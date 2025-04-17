@@ -4,7 +4,7 @@ import Markdown from 'vue3-markdown-it'
 interface Message {
   id: string
   text: string
-  sender: 'user' | 'bot'
+  sender: 'user' | 'bot' | any
   createdAt: string
 }
 
